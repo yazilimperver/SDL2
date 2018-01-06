@@ -1794,8 +1794,6 @@ AAssetManager* Android_JNI_GetAssetManager(void)
 {
     struct LocalReferenceHolder refs = LocalReferenceHolder_Setup(__FUNCTION__);
 
-    int result = 0;
-
     jmethodID mid;
     jobject context;
     jobject assetManager;

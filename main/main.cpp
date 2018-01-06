@@ -44,7 +44,7 @@ int main(int argc, char** argsv)
 	}
 
     // Create our opengl contex t and attach it to our window
-    void* mMainGLContext = SDL_GL_CreateContext(window);
+    SDL_GL_CreateContext(window);
 
     glClearColor(0, 0, 0, 0);
     glEnable(GL_CULL_FACE);
