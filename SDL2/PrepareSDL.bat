@@ -1,5 +1,5 @@
-SET UENGINE_LIB_PATH="E:\GitRepository\uEngineAppFW\ext\SDL2-2.0.7\android\lib\."
-SET UENGINE_APP_PATH=E:\GitRepository\uEngineAppFW\code\Projects\Android\Executables\SDL2_Application
+SET USER_LIB_PATH=""
+SET USER_APP_PATH=
 SET DEBUG_APP_PATH=libs_debug
 SET RELEASE_APP_PATH=libs_release
 
@@ -13,41 +13,41 @@ del /s *.o
 del /s *.log
 
 cd .\ARM\Debug
-xcopy /y *.so "%UENGINE_APP_PATH%\%DEBUG_APP_PATH%\armeabi-v7a\."
+xcopy /y *.so "%USER_APP_PATH%\%DEBUG_APP_PATH%\armeabi-v7a\."
 rmdir SDL2.tlog /s /q
 cd ..
 cd Release
-xcopy /y *.so "%UENGINE_APP_PATH%\%RELEASE_APP_PATH%\armeabi-v7a\."
+xcopy /y *.so "%USER_APP_PATH%\%RELEASE_APP_PATH%\armeabi-v7a\."
 rmdir SDL2.tlog /s /q
 cd ../..
 
 cd .\ARM64\Debug
-xcopy /y *.so "%UENGINE_APP_PATH%\%DEBUG_APP_PATH%\arm64-v8a\."
+xcopy /y *.so "%USER_APP_PATH%\%DEBUG_APP_PATH%\arm64-v8a\."
 rmdir SDL2.tlog /s /q
 cd ..
 cd Release
-xcopy /y *.so "%UENGINE_APP_PATH%\%RELEASE_APP_PATH%\arm64-v8a\."
+xcopy /y *.so "%USER_APP_PATH%\%RELEASE_APP_PATH%\arm64-v8a\."
 rmdir SDL2.tlog /s /q
 cd ../..
 
 cd .\x86\Debug
-xcopy /y *.so "%UENGINE_APP_PATH%\%DEBUG_APP_PATH%\x86\."
+xcopy /y *.so "%USER_APP_PATH%\%DEBUG_APP_PATH%\x86\."
 rmdir SDL2.tlog /s /q
 cd ..
 cd Release
-xcopy /y *.so "%UENGINE_APP_PATH%\%RELEASE_APP_PATH%\x86\."
+xcopy /y *.so "%USER_APP_PATH%\%RELEASE_APP_PATH%\x86\."
 rmdir SDL2.tlog /s /q
 cd ../..
 
 cd x64/Debug
-xcopy /y *.so "%UENGINE_APP_PATH%\%DEBUG_APP_PATH%\x64\."
+xcopy /y *.so "%USER_APP_PATH%\%DEBUG_APP_PATH%\x64\."
 rmdir SDL2.tlog /s /q
 cd ..
 cd Release
-xcopy /y *.so "%UENGINE_APP_PATH%\%RELEASE_APP_PATH%\x64\."
+xcopy /y *.so "%USER_APP_PATH%\%RELEASE_APP_PATH%\x64\."
 rmdir SDL2.tlog /s /q
 cd ../..
 
-xcopy /y /s *.* %UENGINE_LIB_PATH%
+xcopy /y /s *.* %USER_LIB_PATH%
 
 cd ..
