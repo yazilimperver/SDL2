@@ -9,8 +9,15 @@
 
 #include <string>
 
+extern "C"
+{
+    AAssetManager* Android_JNI_GetAssetManager(void);
+    JNIEnv* Android_JNI_GetEnv(void);
+    const char* GetPackageName();
+}
 int main(int argc, char** argsv)
 {
+    const char* packageName = GetPackageName();
 	//put your SDL / game code here
 
 	SDL_Window *window;                    // Declare a pointer

@@ -91,6 +91,8 @@ int Android_JNI_SetupThread(void);
 
 /* Asset manager */
 AAssetManager* Android_JNI_GetAssetManager(void);
+const char* GetPackageName();
+void ObtainResourceDescriptor(const char* path, int* descriptor, off_t* start, off_t* length);
 
 /* Generic messages */
 int Android_JNI_SendMessage(int command, int param);

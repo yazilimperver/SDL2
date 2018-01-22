@@ -1817,6 +1817,67 @@ AAssetManager* Android_JNI_GetAssetManager(void)
     return assetMgr;
 }
 
+const char* GetPackageName()
+{
+    struct LocalReferenceHolder refs = LocalReferenceHolder_Setup(__FUNCTION__);
+
+    jobject context;
+
+    JNIEnv *mEnv = Android_JNI_GetEnv();
+    if (!LocalReferenceHolder_Init(&refs, mEnv)) {
+        LocalReferenceHolder_Cleanup(&refs);
+        return NULL;
+    }
+
+    /* context = SDLActivity.getContext(); */
+    context = (*mEnv)->CallStaticObjectMethod(mEnv, mActivityClass, midGetContext);
+    jmethodID midGetPackageName = (*mEnv)->GetMethodID(mEnv, (*mEnv)->GetObjectClass(mEnv, context), "getPackageName",
+        "()Ljava/lang/String;");
+
+    jstring packageName = (jstring)(*mEnv)->CallObjectMethod(mEnv, context, midGetPackageName);
+
+    const char* packageNameStr = (*mEnv)->GetStringUTFChars(mEnv, packageName, NULL);
+    char* result = malloc(strlen(packageNameStr));
+    strcpy(result, packageNameStr);
+    (*mEnv)->ReleaseStringUTFChars(mEnv, packageName, packageNameStr);
+
+    return  result;
+}
+
+void ObtainResourceDescriptor(const char* path, int32_t* descriptor, off_t* start, off_t* length)
+{
+    struct LocalReferenceHolder refs = LocalReferenceHolder_Setup(__FUNCTION__);
+
+    jmethodID mid;
+    jobject context;
+    jobject assetManager;
+
+    JNIEnv *mEnv = Android_JNI_GetEnv();
+    if (!LocalReferenceHolder_Init(&refs, mEnv)) {
+        LocalReferenceHolder_Cleanup(&refs);
+        return;
+    }
+
+    /* context = SDLActivity.getContext(); */
+    context = (*mEnv)->CallStaticObjectMethod(mEnv, mActivityClass, midGetContext);
+
+    /* assetManager = context.getAssets(); */
+    mid = (*mEnv)->GetMethodID(mEnv, (*mEnv)->GetObjectClass(mEnv, context),
+        "getAssets", "()Landroid/content/res/AssetManager;");
+    assetManager = (*mEnv)->CallObjectMethod(mEnv, context, mid);
+
+    AAssetManager* assetMgr = AAssetManager_fromJava(mEnv, assetManager);
+
+    AAsset* lAsset = AAssetManager_open(assetMgr, path, AASSET_MODE_UNKNOWN);
+
+    if (lAsset != NULL) 
+    {
+        *descriptor = AAsset_openFileDescriptor(lAsset, start, length);
+        AAsset_close(lAsset);
+    }
+    LocalReferenceHolder_Cleanup(&refs);
+}
+
 int Android_JNI_ShowMessageBox(const SDL_MessageBoxData *messageboxdata, int *buttonid)
 {
     JNIEnv *env;
