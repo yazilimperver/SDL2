@@ -36,7 +36,7 @@ int main(int argc, char** argsv)
 
     // Create an application window with the following settings:
 	window = SDL_CreateWindow(
-		"An SDL 2.0.7",                  // window title
+		"An SDL 2.0.8",                  // window title
 		SDL_WINDOWPOS_UNDEFINED,           // initial x position
 		SDL_WINDOWPOS_UNDEFINED,           // initial y position
 		640,                               // width, in pixels

@@ -1,0 +1,55 @@
+Manifest-Version: 1.0
+Built-By: Generated-by-ADT
+Created-By: Android Gradle 2.3.3
+
+Name: res/mipmap-mdpi-v4/ic_launcher.png
+SHA1-Digest: c2d+OcwELQ3r6yafTaNSlPjZXIw=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 5tZBK7vq+s8hsgiFLPBQfmvwU40=
+
+Name: lib/armeabi-v7a/libc++_shared.so
+SHA1-Digest: cW4kUyWMjwWfxNgX3Xn7JaSvM2c=
+
+Name: lib/arm64-v8a/libc++_shared.so
+SHA1-Digest: Vp+pFlCpRv24B+9rUEOdZxP0kN0=
+
+Name: lib/armeabi-v7a/libSDL2.so
+SHA1-Digest: sGPNTk1wGDYngIUz/9q+WHC9IGg=
+
+Name: res/mipmap-xhdpi-v4/ic_launcher.png
+SHA1-Digest: twNLR8IebCl6GATWt41DPpPo7tg=
+
+Name: res/mipmap-hdpi-v4/ic_launcher.png
+SHA1-Digest: SoU7j1fVikuuQiHanVQhUp4BNs4=
+
+Name: res/mipmap-xxxhdpi-v4/ic_launcher.png
+SHA1-Digest: TaES5Vx6XEGaGsCBheXcXEa6G+g=
+
+Name: lib/arm64-v8a/libmain.so
+SHA1-Digest: b/MHOXD1lrRqYjWKs1tVcGYTFmc=
+
+Name: lib/x86/libc++_shared.so
+SHA1-Digest: s7Xhvdaum+EjPQpN/RgiRONqx50=
+
+Name: lib/x86/libSDL2.so
+SHA1-Digest: kNC8zZ8+ThgCtFsA+iJTXbVCxEc=
+
+Name: lib/armeabi-v7a/libmain.so
+SHA1-Digest: Q7W++VXhghKg+kJFGLMzsU8+iTo=
+
+Name: lib/arm64-v8a/libSDL2.so
+SHA1-Digest: s8YUucwn4thh2AI552Q0fJ0lKKY=
+
+Name: resources.arsc
+SHA1-Digest: GDbk9ts9E/1ho+Q+LaZT9Ff3H8U=
+
+Name: lib/x86/libmain.so
+SHA1-Digest: sga/dv7V9LCz8ttLshws/C1UhMg=
+
+Name: classes.dex
+SHA1-Digest: qtia69715JKk+GsPiiqGknhxXso=
+
+Name: res/mipmap-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: NXwgVHOSTQyAgZCw9xoHPYhrlsc=
+

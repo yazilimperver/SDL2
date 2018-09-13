@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/.workspace
+/SDL2_Application/build/android-profile
+/SDL2_Application/.gradle/3.3

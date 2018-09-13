@@ -174,9 +174,6 @@
     <ClCompile Include="src\render\SDL_render.c">
       <Filter>src\render</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\SDL_yuv_mmx.c">
-      <Filter>src\render</Filter>
-    </ClCompile>
     <ClCompile Include="src\render\SDL_yuv_sw.c">
       <Filter>src\render</Filter>
     </ClCompile>
@@ -406,5 +403,16 @@
     <ClCompile Include="src\video\SDL_vulkan_utils.c">
       <Filter>src\video</Filter>
     </ClCompile>
+    <ClCompile Include="src\video\SDL_yuv.c">
+      <Filter>src\video</Filter>
+    </ClCompile>
+    <ClCompile Include="src\video\yuv2rgb\yuv_rgb.c">
+      <Filter>src\video</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\render\SDL_yuv_sw_c.h">
+      <Filter>src\render</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

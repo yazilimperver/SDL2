@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|ARM">
       <Configuration>Debug</Configuration>
@@ -17,14 +17,6 @@
       <Configuration>Release</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x86">
       <Configuration>Debug</Configuration>
       <Platform>x86</Platform>
@@ -33,139 +25,95 @@
       <Configuration>Release</Configuration>
       <Platform>x86</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
+    <AndroidBuildType>Gradle</AndroidBuildType>
     <RootNamespace>SDL2_Application</RootNamespace>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ProjectVersion>1.0</ProjectVersion>
-    <ProjectGuid>{7b7904f1-e3de-4101-9420-ca01d14159a9}</ProjectGuid>
+    <ProjectGuid>{9700373b-506d-4635-9e53-f0f01f83f288}</ProjectGuid>
     <_PackagingProjectWithoutNativeComponent>true</_PackagingProjectWithoutNativeComponent>
     <LaunchActivity Condition="'$(LaunchActivity)' == ''">com.SDL2_Application.SDL2_Application</LaunchActivity>
-    <JavaSourceRoots>src</JavaSourceRoots>
+    <JavaSourceRoots>src\main\java</JavaSourceRoots>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
-    <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
-    <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <TargetName>$(RootNamespace)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
+  <ItemDefinitionGroup>
+    <GradlePackage>
+      <ProjectDirectory>$(ProjectDir)app</ProjectDirectory>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">assembleDebug</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">assembleDebug</AdditionalOptions>
+    </GradlePackage>
+  </ItemDefinitionGroup>
   <ImportGroup Label="ExtensionSettings" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
   <ItemGroup>
-    <Content Include="res\values\drawable-hdpi\ic_launcher.png" />
-    <Content Include="res\values\drawable-mdpi\ic_launcher.png" />
-    <Content Include="res\values\drawable-xhdpi\ic_launcher.png" />
-    <Content Include="res\values\drawable-xxhdpi\ic_launcher.png" />
-    <Content Include="res\values\layout\main.xml" />
-    <AntBuildXml Include="build.xml" />
-    <AndroidManifest Include="AndroidManifest.xml" />
-    <AntProjectPropertiesFile Include="project.properties" />
-    <Content Include="res\values\strings.xml" />
-    <JavaCompile Include="src\com\SDL2_Application\SDL2_Application.java" />
-    <JavaCompile Include="src\org\libsdl\app\SDL.java" />
-    <JavaCompile Include="src\org\libsdl\app\SDLActivity.java" />
-    <JavaCompile Include="src\org\libsdl\app\SDLAudioManager.java" />
-    <JavaCompile Include="src\org\libsdl\app\SDLControllerManager.java" />
+    <GradleTemplate Include="app\build.gradle.template" />
+    <GradleTemplate Include="app\src\main\AndroidManifest.xml.template" />
+    <GradleTemplate Include="build.gradle.template" />
+    <GradleTemplate Include="settings.gradle.template" />
+    <GradleTemplate Include="gradle\wrapper\gradle-wrapper.properties.template" />
+  </ItemGroup>
+  <ItemGroup>
+    <AntProjectPropertiesFile Include="gradle.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <JavaCompile Include="app\src\main\java\com\SDL2_Application\SDL2_Application.java" />
+    <JavaCompile Include="app\src\main\java\org\libsdl\app\SDL.java" />
+    <JavaCompile Include="app\src\main\java\org\libsdl\app\SDLActivity.java" />
+    <JavaCompile Include="app\src\main\java\org\libsdl\app\SDLAudioManager.java" />
+    <JavaCompile Include="app\src\main\java\org\libsdl\app\SDLControllerManager.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\jni\Android.mk" />
+    <Content Include="app\jni\Application.mk" />
+    <Content Include="app\jni\src\Android.mk" />
+    <Content Include="app\src\main\res\mipmap-hdpi\ic_launcher.png" />
+    <Content Include="app\src\main\res\mipmap-mdpi\ic_launcher.png" />
+    <Content Include="app\src\main\res\mipmap-xhdpi\ic_launcher.png" />
+    <Content Include="app\src\main\res\mipmap-xxhdpi\ic_launcher.png" />
+    <Content Include="app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" />
+    <Content Include="app\src\main\res\values\colors.xml" />
+    <Content Include="app\src\main\res\values\strings.xml" />
+    <Content Include="app\src\main\res\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\main\main.vcxproj" />
